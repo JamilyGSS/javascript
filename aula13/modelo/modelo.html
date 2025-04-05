@@ -8,15 +8,25 @@
 </head>
 <body>
     <header>
-        <h1>Hora do Dia</h1>
+        <h1>Verificador de Idade</h1>
     </header>
 
     <section>
         <div>
-            oi
+            Ano de Nascimento: <input type="number" name="textano" id="textano" required>
         </div>
         <div>
-            oi
+            Sexo: <input type="radio" name="sexo" id="mas" value="Homem" checked>
+            <label for="mas">Masculino</label>
+            <input type="radio" name="sexo" id="fem" value="Mulher">
+            <label for="fem">Feminino</label>
+        </div>
+        <div>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div id="res">
+            <p>Preencha os dados acima para ver o resultado!</p>
+            <img src="imagens/meninobb.jpg" alt="">
         </div>
     </section>
 
