@@ -1,40 +1,20 @@
-function verificar() {
-var data = new Date()
-var ano = data.getFullYear()
-var anonasc = window.document.getElementById('textano')
-var res =  window.document.getElementById('res')
-if (anonasc.value.length == 0 || Number(anonasc.value) > ano) {
-    window.alert('[ERRO]Tente novamente')
-} else {
-    var sex = window.document.getElementsByName('sexo')
-    var idade = ano - Number(anonasc.value)
-    var genero = " "
-    var img = document.createElement('img')
-    if (sex[0].checked) {
-        genero = 'Homem'
-        if (idade <= 10) {
-            img.setAttribute('src', 'meninobb.jpg')
-        } else if (idade <= 30) {
-            img.setAttribute('src', 'jovemhomem.jpg')
-        } else if (idade <= 60) {
-            img.setAttribute('src', 'adulto.jpg')
-        } else {
-            img.setAttribute('src', 'idoso.jpg')
-        }
-    } else {
-        genero = 'Mulher'
-        if (idade <= 10) {
-            img.setAttribute('src', 'meninabb.jpg')
-        } else if (idade <= 30) {
-            img.setAttribute('src', 'jovemmulher.jpg')
-        } else if (idade <= 60) {
-            img.setAttribute('src', 'adulta.jpg')
-        } else {
-            img.setAttribute('src', 'idosa.jpg')
-        }
+function contar() {
+    var inicio = Number(window.document.getElementById('textinicio').value)
+    var fim = Number(window.document.getElementById('textfim').value)
+    var passo = Number(window.document.getElementById('textpasso').value)
+    var res = window.document.getElementById('res')
+    if (passo === 0) {
+        res.innerHTML = 'Impossivel contar!'
+        window.alert('Passo inválido! Considerando PASSO 1!')
+        passo = 1
+    } 
+    if (inicio === "" || fim === "" || passo === "") {
+        res.innerHTML = "Impossível contar!"
+        return
     }
-    res.style.textAlign = 'center'
-    res.innerHTML = `Detectamos ${genero} com ${idade} anos.<br>` 
-    res.appendChild(img)
-}
+    res.innerHTML = 'Contando: <br>'
+    for (var c = inicio; c <= fim; c += passo) {
+        res.innerHTML += `${c} 👉`
+    }
+    res.innerHTML += '🏁'
 }

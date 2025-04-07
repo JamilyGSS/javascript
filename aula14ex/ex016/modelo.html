@@ -3,33 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hora do Dia</title>
+    <title>Contador</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Verificador de Idade</h1>
+        <h1>Vamos contar</h1>
     </header>
 
     <section>
-        <div>
-            Ano de Nascimento: <input type="number" name="textano" id="textano" required>
+       <div>
+            Início: <input type="number" name="textinicio" id="textinicio" required> <br>
         </div>
         <div>
-            Sexo: <input type="radio" name="sexo" id="mas" value="Homem" checked>
-            <label for="mas">Masculino</label>
-            <input type="radio" name="sexo" id="fem" value="Mulher">
-            <label for="fem">Feminino</label>
+            Fim: <input type="number" name="textfim" id="textfim" required>
         </div>
         <div>
-            <input type="button" value="Verificar" onclick="verificar()">
+            Passo: <input type="number" name="textpasso" id="textpasso" required>
+        </div>
+        <div>
+            <input type="button" value="Contar" onclick="contar()">
         </div>
         <div id="res">
-            <p>Preencha os dados acima para ver o resultado!</p>
-            <img src="imagens/meninobb.jpg" alt="">
+            <p>Preparando a contagem...</p>
         </div>
     </section>
-
+    
     <footer>
         <p>&copy;CursoemVideo</p>
     </footer>
