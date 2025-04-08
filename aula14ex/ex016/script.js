@@ -1,20 +1,39 @@
 function contar() {
-    var inicio = Number(window.document.getElementById('textinicio').value)
-    var fim = Number(window.document.getElementById('textfim').value)
-    var passo = Number(window.document.getElementById('textpasso').value)
+    var inicio = window.document.getElementById('textinicio')
+    var fim = window.document.getElementById('textfim')
+    var passo =window.document.getElementById('textpasso')
     var res = window.document.getElementById('res')
-    if (passo === 0) {
-        res.innerHTML = 'Impossivel contar!'
-        window.alert('Passo inválido! Considerando PASSO 1!')
-        passo = 1
+
+
+    if (inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0 ) {
+        res.innerHTML = "Impossível contar! Preencha todos os campos corretamente."
     } 
-    if (inicio === "" || fim === "" || passo === "") {
-        res.innerHTML = "Impossível contar!"
-        return
-    }
+   inicio = Number(inicio.value)
+   fim = Number(fim.value)
+   passo = Number(passo.value)
+
+   if (passo === 0) {
+    res.innerHTML = 'Impossivel contar!'
+    window.alert('Passo inválido! Considerando PASSO 1!')
+    passo = 1
+   }
     res.innerHTML = 'Contando: <br>'
+
+   
+    if (inicio < fim) {
     for (var c = inicio; c <= fim; c += passo) {
         res.innerHTML += `${c} 👉`
     }
+    } else {
+        for (var c = inicio; c >= fim; c -= passo) {
+        res.innerHTML += `${c} 👉`
+    }
     res.innerHTML += '🏁'
-}
+    }
+    }
+
+ /*if (passo === 0) {
+        res.innerHTML = 'Impossivel contar!'
+        window.alert('Passo inválido! Considerando PASSO 1!')
+        passo = 1
+    } */
